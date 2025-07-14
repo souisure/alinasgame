@@ -1,0 +1,222 @@
+.catching-hands-intro,
+.catching-hands-game {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.intro-content {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  max-width: 350px;
+}
+
+.intro-content h2 {
+  color: #d67b7d;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.intro-content p {
+  color: #5d4e75;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.start-game-button {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 154, 158, 0.3);
+  margin-top: 20px;
+}
+
+.start-game-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 154, 158, 0.4);
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-header h3 {
+  color: #d67b7d;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.game-header p {
+  color: #8b5a5c;
+  font-size: 0.9rem;
+}
+
+.game-area {
+  width: 100%;
+  max-width: 350px;
+  height: 400px;
+  background: linear-gradient(135deg, #f8f4f0 0%, #fff5f2 100%);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+}
+
+.hand {
+  position: absolute;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s ease;
+  z-index: 2;
+}
+
+.player-hand {
+  filter: drop-shadow(0 2px 8px rgba(255, 154, 158, 0.4));
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.target-hand {
+  animation: target-glow 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.catch-zone {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 2px dashed rgba(78, 205, 196, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: zone-pulse 1.5s ease-in-out infinite;
+  z-index: 1;
+}
+
+.feedback {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  animation: slideUp 0.3s ease;
+  z-index: 10;
+  max-width: 280px;
+  width: 90%;
+}
+
+.feedback.success {
+  background: rgba(78, 205, 196, 0.95);
+  color: white;
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+}
+
+.feedback.info {
+  background: rgba(255, 154, 158, 0.95);
+  color: white;
+  box-shadow: 0 8px 25px rgba(255, 154, 158, 0.4);
+}
+
+.feedback-content h4 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.feedback-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+@keyframes target-glow {
+  0%, 100% { 
+    filter: drop-shadow(0 2px 8px rgba(78, 205, 196, 0.4));
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% { 
+    filter: drop-shadow(0 4px 12px rgba(78, 205, 196, 0.6));
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes zone-pulse {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% { 
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+  .game-area {
+    max-width: 320px;
+    height: 350px;
+  }
+  
+  .hand {
+    font-size: 1.8rem;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .catch-zone {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Disable text selection and dragging */
+.game-area * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
