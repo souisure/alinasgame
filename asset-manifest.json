@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/alinasgame/static/css/main.fd5623c8.css",
+    "main.js": "/alinasgame/static/js/main.77607c0b.js",
+    "index.html": "/alinasgame/index.html",
+    "main.fd5623c8.css.map": "/alinasgame/static/css/main.fd5623c8.css.map",
+    "main.77607c0b.js.map": "/alinasgame/static/js/main.77607c0b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd5623c8.css",
+    "static/js/main.77607c0b.js"
+  ]
+}
