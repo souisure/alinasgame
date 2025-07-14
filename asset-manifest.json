@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/alinasgame/static/css/main.fd5623c8.css",
-    "main.js": "/alinasgame/static/js/main.77607c0b.js",
+    "main.js": "/alinasgame/static/js/main.3fb6e270.js",
     "index.html": "/alinasgame/index.html",
     "main.fd5623c8.css.map": "/alinasgame/static/css/main.fd5623c8.css.map",
-    "main.77607c0b.js.map": "/alinasgame/static/js/main.77607c0b.js.map"
+    "main.3fb6e270.js.map": "/alinasgame/static/js/main.3fb6e270.js.map"
   },
   "entrypoints": [
     "static/css/main.fd5623c8.css",
-    "static/js/main.77607c0b.js"
+    "static/js/main.3fb6e270.js"
   ]
 }
